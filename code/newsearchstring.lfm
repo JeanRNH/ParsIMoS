@@ -1,0 +1,250 @@
+object Form2: TForm2
+  Left = 393
+  Height = 356
+  Top = 145
+  Width = 484
+  Caption = 'Search Terms'
+  ClientHeight = 356
+  ClientWidth = 484
+  Color = clWhite
+  OnShow = FormShow
+  LCLVersion = '1.6.2.0'
+  object lbledtsearchterm: TLabeledEdit
+    Left = 15
+    Height = 22
+    Top = 57
+    Width = 278
+    EditLabel.AnchorSideLeft.Control = lbledtsearchterm
+    EditLabel.AnchorSideRight.Control = lbledtsearchterm
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = lbledtsearchterm
+    EditLabel.Left = 15
+    EditLabel.Height = 16
+    EditLabel.Top = 38
+    EditLabel.Width = 278
+    EditLabel.Caption = 'Insert search term to find the charges'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+    OnChange = lbledtsearchtermChange
+  end
+  object BtnSearch: TButton
+    Left = 16
+    Height = 21
+    Top = 83
+    Width = 80
+    Caption = '> Search'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnSearchClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object BtnloadlastparamSearchTerms: TButton
+    Left = 16
+    Height = 21
+    Top = 325
+    Width = 277
+    Caption = 'Load last parameters'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnloadlastparamSearchTermsClick
+    ParentFont = False
+    TabOrder = 7
+  end
+  object LBSearchTermLines: TListBox
+    Left = 301
+    Height = 148
+    Top = 55
+    Width = 173
+    ExtendedSelect = False
+    ItemHeight = 0
+    TabOrder = 4
+    Visible = False
+  end
+  object lblLBsearchterm: TLabel
+    Left = 303
+    Height = 16
+    Top = 38
+    Width = 166
+    Caption = 'Search term found in lines'
+    ParentColor = False
+    Visible = False
+  end
+  object BtnListSelectLine: TButton
+    Left = 213
+    Height = 21
+    Top = 110
+    Width = 80
+    Caption = 'Select <'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnListSelectLineClick
+    ParentFont = False
+    TabOrder = 6
+    Visible = False
+  end
+  object lbledtsearchlinenum: TLabeledEdit
+    Left = 15
+    Height = 22
+    Top = 156
+    Width = 278
+    EditLabel.AnchorSideLeft.Control = lbledtsearchlinenum
+    EditLabel.AnchorSideRight.Control = lbledtsearchlinenum
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = lbledtsearchlinenum
+    EditLabel.Left = 15
+    EditLabel.Height = 16
+    EditLabel.Top = 137
+    EditLabel.Width = 278
+    EditLabel.Caption = 'Or input the line number'
+    EditLabel.ParentColor = False
+    TabOrder = 2
+    OnChange = lbledtsearchlinenumChange
+  end
+  object BtnDirectSelectLine: TButton
+    Left = 16
+    Height = 21
+    Top = 182
+    Width = 80
+    Caption = '> Select'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnDirectSelectLineClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object lbldescription: TLabel
+    Left = 16
+    Height = 16
+    Top = 12
+    Width = 398
+    Caption = 'No Mulliken charges were found using the default search term.'
+    ParentColor = False
+  end
+  object lbledtspacerlines: TLabeledEdit
+    Left = 261
+    Height = 22
+    Hint = 'Number of lines between the search term and the charge description'
+    Top = 83
+    Width = 32
+    EditLabel.AnchorSideTop.Control = lbledtspacerlines
+    EditLabel.AnchorSideTop.Side = asrCenter
+    EditLabel.AnchorSideRight.Control = lbledtspacerlines
+    EditLabel.AnchorSideBottom.Control = lbledtspacerlines
+    EditLabel.AnchorSideBottom.Side = asrBottom
+    EditLabel.Left = 148
+    EditLabel.Height = 16
+    EditLabel.Top = 86
+    EditLabel.Width = 110
+    EditLabel.Caption = '+number of lines'
+    EditLabel.ParentColor = False
+    LabelPosition = lpLeft
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+    Visible = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 104
+    Top = 216
+    Width = 277
+    Caption = 'Parsing parameters'
+    ClientHeight = 82
+    ClientWidth = 269
+    Color = clSilver
+    ParentColor = False
+    TabOrder = 8
+    TabStop = True
+    object lbledtchargecol: TLabeledEdit
+      Left = 219
+      Height = 22
+      Top = 29
+      Width = 43
+      EditLabel.AnchorSideTop.Control = lbledtchargecol
+      EditLabel.AnchorSideTop.Side = asrCenter
+      EditLabel.AnchorSideRight.Control = lbledtchargecol
+      EditLabel.AnchorSideBottom.Control = lbledtchargecol
+      EditLabel.AnchorSideBottom.Side = asrBottom
+      EditLabel.Left = 14
+      EditLabel.Height = 16
+      EditLabel.Top = 32
+      EditLabel.Width = 202
+      EditLabel.Caption = 'Atom Charges Column Number '
+      EditLabel.ParentColor = False
+      LabelPosition = lpLeft
+      TabOrder = 0
+    end
+    object lbledtidentifcol: TLabeledEdit
+      Left = 219
+      Height = 22
+      Top = 57
+      Width = 43
+      EditLabel.AnchorSideTop.Control = lbledtidentifcol
+      EditLabel.AnchorSideTop.Side = asrCenter
+      EditLabel.AnchorSideRight.Control = lbledtidentifcol
+      EditLabel.AnchorSideBottom.Control = lbledtidentifcol
+      EditLabel.AnchorSideBottom.Side = asrBottom
+      EditLabel.Left = 3
+      EditLabel.Height = 16
+      EditLabel.Top = 60
+      EditLabel.Width = 213
+      EditLabel.Caption = 'Atom Identifiers Column Number '
+      EditLabel.ParentColor = False
+      LabelPosition = lpLeft
+      TabOrder = 1
+    end
+    object lbledtnewlinenum: TLabeledEdit
+      Left = 182
+      Height = 22
+      Top = 2
+      Width = 80
+      EditLabel.AnchorSideTop.Control = lbledtnewlinenum
+      EditLabel.AnchorSideTop.Side = asrCenter
+      EditLabel.AnchorSideRight.Control = lbledtnewlinenum
+      EditLabel.AnchorSideBottom.Control = lbledtnewlinenum
+      EditLabel.AnchorSideBottom.Side = asrBottom
+      EditLabel.Left = 93
+      EditLabel.Height = 16
+      EditLabel.Top = 5
+      EditLabel.Width = 86
+      EditLabel.Caption = 'Selected Line '
+      EditLabel.ParentColor = False
+      LabelPosition = lpLeft
+      ReadOnly = True
+      TabOrder = 2
+      TabStop = False
+    end
+  end
+  object BtnContinue: TButton
+    Left = 303
+    Height = 49
+    Top = 216
+    Width = 168
+    Caption = 'Resume parsing'
+    OnClick = BtnContinueClick
+    TabOrder = 9
+  end
+  object btnContwithMulliken: TButton
+    Left = 303
+    Height = 49
+    Top = 271
+    Width = 168
+    Caption = 'Skip and use Mulliken'
+    OnClick = btnContwithMullikenClick
+    TabOrder = 10
+    Visible = False
+  end
+end
