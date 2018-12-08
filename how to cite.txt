@@ -1,4 +1,5 @@
 How to cite
 
 
-Kune, C. , Haler, J. , Far, J. and De Pauw, E. (2018), Effectiveness and limitations of computational chemistry and mass spectrometry in the rational design of target‐specific shift reagents for ion mobility spectrometry. ChemPhysChem. Accepted Author Manuscript. . doi:10.1002/cphc.201800555
+C. Kune, J. R. N. Haler, J. Far, E. De Pauw, ChemPhysChem 2018, 19, 2921.
+doi:10.1002/cphc.201800555
